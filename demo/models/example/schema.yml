@@ -1,4 +1,3 @@
-
 version: 2
 
 models:
@@ -9,12 +8,7 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-<<<<<<< HEAD
                 
-=======
-            
->>>>>>> 942b5cbb25b844b97b110f3f6d75faafda491a7d
-
     - name: my_second_dbt_model
       description: "A starter dbt model"
       columns:
