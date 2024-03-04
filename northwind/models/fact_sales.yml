@@ -7,7 +7,7 @@ models:
       - name: OrderId
         description: Degenerate dimension for of the order.
         tests:
-            - not_null
+          - not_null
       - name: customerkey
         description: Dimension key for dim_customer
       - name: employeekey
@@ -19,11 +19,11 @@ models:
       - name: quantity
         description: the quantity of the product on the order. Additive
         tests:
-          - not_null   
+          - not_null
       - name: extendedpriceamount
         description: additive fact for quantity * product price
         tests:
-          - not_null 
+          - not_null
       - name: discountamount
         description: additive fact for extended price * discount
         tests:
