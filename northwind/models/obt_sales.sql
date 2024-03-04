@@ -1,17 +1,17 @@
 with f_sales as (
-    select * from {{ ref('fact_sales') }}
+    select * from analytics.dbt_ayushsaseendran_northwind.fact_sales
 ),
 d_customer as (
-    select * from {{ ref('dim_customer') }}
+    select * from analytics.dbt_ayushsaseendran_northwind.dim_customer
 ),
 d_employee as (
-    select * from {{ ref('dim_employee') }}
+    select * from analytics.dbt_ayushsaseendran_northwind.dim_employee
 ),
 d_date as (
-    select * from {{ ref('dim_date') }}
+    select * from analytics.dbt_ayushsaseendran_northwind.dim_date
 ),
 d_product as (
-    select * from {{ ref('dim_product') }}
+    select * from analytics.dbt_ayushsaseendran_northwind.dim_product
 )
 
 select 
@@ -23,7 +23,8 @@ select
     f.extendedpriceamount,
     f.discountamount,
     f.soldamount
-    from fact_sales as f left join d_customer on f.customerkey = d_customer.customerkey
-    left join d_employee on f.employeekey = d_employee.employeekey
-    left join d_date on f.orderdatekey = d_date.datekey
-    left join d_product on f.productkey = d_product.productkey
+from f_sales as f 
+left join d_customer on f.customerkey = d_customer.customerkey
+left join d_employee on f.employeekey = d_employee.employeekey
+left join d_date on f.orderdatekey = d_date.datekey
+left join d_product on f.productkey = d_product.productkey
