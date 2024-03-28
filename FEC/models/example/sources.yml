@@ -44,5 +44,5 @@ sources:
         columns:
           - name: zipcode
         tests:
-          - not null
+          - unique
               
