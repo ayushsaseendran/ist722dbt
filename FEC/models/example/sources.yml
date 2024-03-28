@@ -32,7 +32,7 @@ sources:
               - unique
       - name: sta_operating_expenditures
         columns:
-          - name: tran_id
+          - name: sub_id
             tests:
               - unique
       - name: sta_report_types
