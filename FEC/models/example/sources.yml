@@ -40,8 +40,8 @@ sources:
           - name: reporttypecode
             tests:
               - unique
-      - name: STA_ZIPCODES
+      - name: sta_zipcodes
         columns:
-          - name: ZIPCODE
+          - name: zipcode
         tests:
               - not null
