@@ -44,4 +44,4 @@ sources:
         columns:
           - name: ZIPCODE
         tests:
-              - unique
+              - not null
