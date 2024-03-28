@@ -17,7 +17,7 @@ sources:
               - unique
       - name: sta_dates
         columns:
-          - name: date_key
+          - name: DATEKEY
             tests:
               - unique
       - name: sta_expense_categories
@@ -40,8 +40,8 @@ sources:
           - name: reporttypecode
             tests:
               - unique
-      - name: sta_zipcodes
+      - name: STA_ZIPCODES
         columns:
-          - name: zipcode
+          - name: ZIPCODE
         tests:
-                - unique
+              - unique
