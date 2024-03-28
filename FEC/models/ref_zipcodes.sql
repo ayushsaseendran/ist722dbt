@@ -11,4 +11,4 @@ WITH source_data AS (
 
 SELECT
   *
-FROM source_data;
+FROM source_data
