@@ -2,37 +2,50 @@ version: 2
 
 models:
   - name: dim_date
-    description: "A dimension table for date attributes transformed from STA_DATES."
+    description: "A dimension table for dates, used for date-related analysis in the data warehouse."
     config:
       materialized: table
       schema: FEC  # Assuming you want this table in the FEC schema
     columns:
       - name: date_key
-        description: "Dimension key, a surrogate key for the date."
+        description: "Dimension key, a unique surrogate key for the date dimension."
         tests:
           - unique
           - not_null
+          - primary_key
       - name: date
-        description: "Actual date of transaction."
+        description: "Actual date of the transaction."
         tests:
           - not_null
       - name: year
-        description: "Year of transaction."
+        description: "Year of the transaction."
         tests:
           - not_null
       - name: quarter
-        description: "Quarter of transaction."
+        description: "Quarter of the transaction."
         tests:
           - not_null
       - name: month
-        description: "Month of transaction."
+        description: "Month of the transaction."
         tests:
           - not_null
       - name: day
-        description: "Day of transaction."
+        description: "Day of the transaction."
         tests:
           - not_null
       - name: weekday
-        description: "Weekday of transaction."
+        description: "Weekday of the transaction."
         tests:
           - not_null
+
+sources:
+  - name: fec_data
+    description: "Source schema containing FEC-related data tables."
+    database: CAMPAIGN_FINANCE
+    schema: STAGED  # The schema where your source tables, like TRANSACTION_DT, are located
+    tables:
+      - name: TRANSACTION_DT
+        description: "Source table with transaction dates."
+        columns:
+          - name: TRANSACTION_DT
+            description: "The column in the source table containing the transaction dates."
