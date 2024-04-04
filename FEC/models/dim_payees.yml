@@ -17,6 +17,8 @@ sources:
           - name: ZIP_CODE
             description: "Zip code of the payee."
           # ... other columns as necessary ...
+      # - name: STA_OPERATING_EXPENDITURES
+      #  description: "Source table containing operating expenditures."
 
 models:
   - name: dim_payee

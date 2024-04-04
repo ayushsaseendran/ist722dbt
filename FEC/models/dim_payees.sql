@@ -7,7 +7,7 @@ WITH payee_data AS (
     STATE AS payee_state,
     ZIP_CODE AS payee_zip_code,
     SUB_ID as payee_sub_id
-  FROM {{ source('STAGED', 'STA_INDIV') }}
+  FROM {{ source('STAGED', 'STA_OPERATING_EXPENDITURES') }}
 )
 
 SELECT

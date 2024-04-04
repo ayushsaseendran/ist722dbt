@@ -1,6 +1,7 @@
 version: 2
 sources:
   - name: staged # This should match the schema name where your source tables are located.
+    database: CAMPAIGN_FINANCE
     schema: staged # Adjust this to the actual schema name in your database if different.
     tables:
       - name: sta_indiv

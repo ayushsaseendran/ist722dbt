@@ -1,9 +1,11 @@
 version: 2
+
 sources:
-  - name: staged
-    schema: staged
+  - name: STAGED
+    database: CAMPAIGN_FINANCE
+    schema: STAGED
     tables:
-      - name: sta_operating_expenditures
+      - name: sta_indiv
         description: "The source table for individual contributions."
 
 models:
