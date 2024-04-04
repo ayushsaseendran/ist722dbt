@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_contributor
-    description: "Dimension table for contributors' details."
+    description: "Dimension table for contributors' details, including transaction information."
     config:
       materialized: table
       schema: FEC
@@ -32,3 +32,16 @@ models:
         description: "Name of the contributor's employer."
       - name: occupation
         description: "Occupation of the contributor."
+      - name: transaction_type
+        description: "Type of the transaction."
+        tests:
+          - not_null
+      - name: transaction_amount
+        description: "Amount of the transaction."
+        tests:
+          - not_null
+      - name: transaction_id
+        description: "Unique identifier for the transaction."
+        tests:
+          - unique
+          - not_null
