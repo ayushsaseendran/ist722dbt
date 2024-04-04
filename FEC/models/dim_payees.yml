@@ -46,3 +46,7 @@ models:
         description: "Zip code of the payee."
         tests:
           - not_null
+      - name: payee_sub_id
+        description: "Unique identifier for the transaction submission."
+        tests:
+          - not_null

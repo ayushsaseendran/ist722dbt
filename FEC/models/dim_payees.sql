@@ -5,7 +5,8 @@ WITH payee_data AS (
     NAME AS payee_name,
     CITY AS payee_city,
     STATE AS payee_state,
-    ZIP_CODE AS payee_zip_code
+    ZIP_CODE AS payee_zip_code,
+    SUB_ID as payee_sub_id
   FROM {{ source('STAGED', 'STA_INDIV') }}
 )
 
@@ -14,5 +15,6 @@ SELECT
   payee_name,
   payee_city,
   payee_state,
-  payee_zip_code
+  payee_zip_code,
+  payee_sub_id
 FROM payee_data
