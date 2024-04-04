@@ -45,3 +45,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: sub_id
+        description: "Unique identifier for the transaction submission."
+        tests:
+          - unique
+          - not_null
