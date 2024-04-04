@@ -11,16 +11,16 @@ with
             sta.transaction_amt as contribution_amount_usd,  -- Corrected to use sta instead of trn for transaction_amt
             sta.tran_id as transaction_id
         from {{ source("STAGED", "STA_INDIV") }} sta
-        left join {{ ref("dim_committie") }} cmte on sta.cmte_id = cmte.committee_id
-        left join {{ ref("dim_candidate") }} cand on sta.sub_id = cand.CANDIDATE_ID
-        left join
+         join {{ ref("dim_committie") }} cmte on sta.cmte_id = cmte.committee_id
+         join {{ ref("dim_candidate") }} cand on cmte.committee_id = cand.PRINCIPAL_CMTE_ID
+         join
             {{ ref("dim_contributors") }} contr
             on sta.sub_id = contr.sub_id
             and sta.zip_code = contr.zip_code
-        left join
+         join
             {{ ref("dim_transactiontypes") }} trn
             on sta.transaction_tp = trn.transaction_type
-        left join {{ ref("ref_reporttypes") }} rpt on sta.rpt_tp = rpt.reporttypecode
+         join {{ ref("ref_reporttypes") }} rpt on sta.rpt_tp = rpt.reporttypecode
     )
 
 select

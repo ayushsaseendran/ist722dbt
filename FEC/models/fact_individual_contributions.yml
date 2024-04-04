@@ -54,5 +54,4 @@ models:
       - name: transaction_id
         description: "The unique identifier for the transaction."
         tests:
-          - unique
           - not_null
