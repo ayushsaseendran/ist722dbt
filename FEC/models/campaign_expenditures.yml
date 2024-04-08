@@ -1,0 +1,51 @@
+# models/campaign_expenditures.yml
+
+models:
+  - name: campaign_expenditures
+    description: "This table combines campaign expenditure details with additional dimensional data."
+    columns:
+      - name: expenditure_key
+        description: "The primary key of the expenditure record."
+      - name: expenditure_amount
+        description: "The amount of the expenditure."
+      - name: expenditure_date
+        description: "The date of the expenditure."
+      - name: expenditure_year
+        description: "The year of the expenditure."
+      - name: expenditure_month
+        description: "The month of the expenditure."
+      - name: expenditure_quarter
+        description: "The quarter of the expenditure."
+      - name: expenditure_day
+        description: "The day of the expenditure."
+      - name: expenditure_day_of_week
+        description: "The day of the week of the expenditure."
+      - name: expenditure_week_of_year
+        description: "The week of the year of the expenditure."
+      - name: expenditure_day_of_year
+        description: "The day of the year of the expenditure."
+      - name: expenditure_quarter_name
+        description: "The name of the quarter of the expenditure."
+      - name: expenditure_month_name
+        description: "The name of the month of the expenditure."
+      - name: expenditure_day_name
+        description: "The name of the day of the expenditure."
+      - name: expenditure_weekday
+        description: "Whether the expenditure day is a weekday."
+      - name: expenditure_state
+        description: "The state associated with the expenditure."
+      - name: committee_id
+        description: "The identifier for the committee."
+      - name: committee_party_affiliation
+        description: "The party affiliation of the committee."
+      - name: committee_type_code
+        description: "The type code of the committee."
+      - name: committee_designation_code
+        description: "The designation code of the committee."
+      - name: committee_filing_frequency_code
+        description: "The filing frequency code of the committee."
+      - name: committee_organization_type_code
+        description: "The organization type code of the committee."
+      - name: committee_name
+        description: "The name of the committee."
+      - name: committee_treasurer_name
